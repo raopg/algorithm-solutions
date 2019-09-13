@@ -1,5 +1,6 @@
 def solution(value):
-    for i in range(1,value+1):
+    '''We do not use strings like in the JS solution because in Python, strings are immutable'''
+    for i in range(1,value+1): 
         if i % 15 == 0:
             print('fizzbuzz')
         elif i % 3 == 0:
