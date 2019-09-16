@@ -17,11 +17,11 @@ def is_valid(string: str):
     stack = []
 
     for char in string:
-        if char in brackets:
-            top = stack.pop() if stack else '#'
+        if char in brackets: # Since the keys of the brackets dict are closing brackets, this will check if the character is a closing bracket.
+            top = stack.pop() if stack else '#' # Pop the stack.
 
-            if brackets[char] != top:
-                return False
+            if brackets[char] != top: #If the popped variable is not the opening bracket for the current closing bracket, it means that one or more brackets aren't being closed.
+                return False # Since they arent being closed, its obviously an invalid parantheses string.
         else:
             stack.append(char)
     return not stack
