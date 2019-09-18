@@ -16,7 +16,7 @@ def solution(head, data, position):
     while temp.next != None and i != position:
         temp = temp.next
         i += 1
-    temp.next = current_next
+    current_next = temp.next
     new_node = ListNode(data)
     temp.next = new_node
     new_node.next = current_next
