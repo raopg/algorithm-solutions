@@ -7,11 +7,8 @@
 
 def handle_input(scenario):
     values = scenario.split(' ')
-    currency = int(values[0])
-    cost = int(values[1])
-    bonus = int(values[2])
+    return int(values[0]), int(values[1]), int(values[2])
 
-    return currency, cost, bonus
 
 def containers(scenarios):
     for scenario in scenarios:
