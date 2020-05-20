@@ -13,7 +13,7 @@ print(URLify('     my name    is something else'))
 
 ## Complexity analysis: O(n) time and O(n) space. Unfortunately, we
 # cannot do better in Python, since strings are immutable
-## In Java or C++, we can modify string in-place, with a simple O(n) 
+## In Java or C++, we can modify string (or char arrays) in-place, with a simple O(n) 
 # time solution.
 ###
 ##
