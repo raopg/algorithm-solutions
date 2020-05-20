@@ -14,7 +14,7 @@ def isUnique(string):
 # print(isUnique('adcxsaer'))
 # print(isUnique('a'))
 
-## Time Complexity Analysis: O(n) time, O(n) space.
+## Complexity Analysis: O(n) time, O(n) space.
 
 ## Can we do it in O(1) space? Bit manipulation!
 
