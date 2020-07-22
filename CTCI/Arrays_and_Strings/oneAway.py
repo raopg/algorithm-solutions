@@ -10,6 +10,10 @@
 ## We also need to keep track of which string is longer and which is shorter because we need to only advance pointers
 ## of the longer string when we actually do insertion/ shorter string when we do deletion
 
+## Time and Space Complexity Analysis:
+## Time: O(N)
+## Space: O(N) // But this is mainly because we need to determine shorter and longer strings.
+
 def oneAway(str1, str2):
     longer, shorter = (str1, str2) if len(str1) > len(str2) else (str2, str1)
     edited = False
