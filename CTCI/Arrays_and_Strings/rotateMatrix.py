@@ -29,7 +29,7 @@ def rotateMatrix(mat):
 
             mat[end-offset][start] = mat[end][end-offset]
 
-            mat[end][end-offset] = mat[i][start]
+            mat[end][end-offset] = mat[i][end]
 
             mat[i][end] = top
     return True
