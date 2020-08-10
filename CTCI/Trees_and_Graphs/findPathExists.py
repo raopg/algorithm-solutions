@@ -17,9 +17,10 @@ def Graph:
             node = q.pop()
             if node is node2:
                 return True
-            if node not in visited:
-                q.extend(list(node.neighbors))
-                visited.add(node)
+            for n in node.neighbors:
+                if n not in visited:
+                    q.append(n)
+                    visited.add(n)
         
         return False
 
