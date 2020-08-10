@@ -29,7 +29,8 @@ def findNode(tree, val):
 
 
 def checkSubtree(t1, t2):
-    
+    if t2 is None:
+        return True
     node = findNode(t1, t2.val)
 
     return isEqual(node, t2)
