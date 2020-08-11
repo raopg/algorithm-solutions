@@ -25,6 +25,20 @@ class Tree:
     
     def isBST(self):
         return self._is_bst_recursive(self.root, float("inf"), float("-inf"))
+    
+    def traversal(self, type = 'in-order'):
+
+        if type == 'post-order':
+            return self._postorder_traversal(self.root)
+        elif type == 'pre-order':
+            return self._preorder_traversal(self.root)
+        elif type =='level-order':
+            return self._level_order_traversal(self.root)
+        elif type =='level-order-zigzag':
+            return self._level_order_zigzag_traversal(self.root)
+        else:
+            return self._inorder_traversal(self.root)
+
 
     def _size_recursive(self, node: 'TreeNode'):
         if node == None:
@@ -61,4 +75,16 @@ class Tree:
         return self._is_bst_recursive(node.left, min_val, node.val) and \
             self._is_bst_recursive(node.right, node.val, max_val)
     
+    ## Traversal helpers
+
+    def _inorder_traversal(self, root):
+        pass
+    def _preorder_traversal(self, root):
+        pass    
+    def _postorder_traversal(self, root):
+        pass 
+    def _level_order_traversal(self, root):
+        pass
+    def _level_order_zigzag_traversal(self, root):
+        pass
     
