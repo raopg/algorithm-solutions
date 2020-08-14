@@ -90,19 +90,20 @@ class Tree:
     def _preorder_traversal(self, root):
         if not root:
             return
+        print(root.val)
         if root.left:
             self._preorder_traversal(root.left)
         if root.right:
             self._preorder_traversal(root.right)
-        print(root.val)
     def _postorder_traversal(self, root):
         if not root:
             return
-        print(root.val)
+       
         if root.left:
             self._postorder_traversal(root.left)
         if root.right:
             self._preorder_traversal(root.right)
+        print(root.val)
     def _level_order_traversal(self, root, level):
 
         if not root:
