@@ -35,7 +35,9 @@ class Tree:
         elif type =='level-order':
             return self._level_order_traversal(self.root)
         elif type =='level-order-zigzag':
-            return self._level_order_zigzag_traversal(self.root)
+            self.traversed = dict()
+            self._level_order_zigzag_traversal(self.root)
+            return self.traversed
         else:
             return self._inorder_traversal(self.root)
 
@@ -78,13 +80,40 @@ class Tree:
     ## Traversal helpers
 
     def _inorder_traversal(self, root):
-        pass
+        if not root:
+            return
+        if root.left:
+            self._inorder_traversal(root.left)
+        print(root.val)
+        if root.right:
+            self._inorder_traversal(root.)
     def _preorder_traversal(self, root):
-        pass    
+        if not root:
+            return
+        if root.left:
+            self._preorder_traversal(root.left)
+        if root.right:
+            self._preorder_traversal(root.right)
+        print(root.val)
     def _postorder_traversal(self, root):
-        pass 
-    def _level_order_traversal(self, root):
-        pass
+        if not root:
+            return
+        print(root.val)
+        if root.left:
+            self._postorder_traversal(root.left)
+        if root.right:
+            self._preorder_traversal(root.right)
+    def _level_order_traversal(self, root, level):
+
+        if not root:
+            return traversed
+        if level in self.traversed:
+            self.traversed[level].append(root.val)
+        if root.left:
+            self._level_order_traversal(root.left, level + 1)
+        if root.right:
+            self._level_order_traversal(root.right, level + 1)
+
     def _level_order_zigzag_traversal(self, root):
         pass
     
