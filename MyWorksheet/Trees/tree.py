@@ -125,7 +125,7 @@ class Tree:
         if not root:
             return
         
-        if len(self.levels <= level):
+        if len(self.levels) == level:
             self.levels.append(deque([root.val]))
         else:
             if level % 2 == 0:
