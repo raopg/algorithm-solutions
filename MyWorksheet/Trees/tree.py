@@ -35,9 +35,9 @@ class Tree:
         elif type =='level-order':
             return self._level_order_traversal(self.root)
         elif type =='level-order-zigzag':
-            self.traversed = dict()
+            self.levels = []
             self._level_order_zigzag_traversal(self.root)
-            return self.traversed
+            return self.levels
         else:
             return self._inorder_traversal(self.root)
 
@@ -106,9 +106,13 @@ class Tree:
     def _level_order_traversal(self, root, level):
 
         if not root:
-            return traversed
-        if level in self.traversed:
-            self.traversed[level].append(root.val)
+            return
+        
+        if len(self.levels == level):
+            levels.append([])
+        
+        levels[level].append(root.val)
+        
         if root.left:
             self._level_order_traversal(root.left, level + 1)
         if root.right:
