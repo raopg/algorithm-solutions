@@ -3,7 +3,7 @@
 
 class TreeNode:
     def __init__(self, val = 0, left = None, right = None):
-        self.val
+        self.val = val
         self.left = left
         self.right = right
 
@@ -88,7 +88,7 @@ class Tree:
             self._inorder_traversal(root.left)
         print(root.val)
         if root.right:
-            self._inorder_traversal(root.)
+            self._inorder_traversal(root.right)
     def _preorder_traversal(self, root):
         if not root:
             return
