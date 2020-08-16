@@ -20,6 +20,7 @@ class LinkedList:
             return 'None'
         while temp:
             nodes.append(str(temp.val))
+            temp = temp.next
         
         nodes.append('None')
 
