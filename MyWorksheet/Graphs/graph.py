@@ -1,7 +1,7 @@
 ## Basic Implmentation of Graph DS for:
 ## 1. Adj list
 ## 2. Adj matrix
-## For each of the above, undirected weighted, directed weighted, and non-weighted graph implementations.
+## For adj list, undirected weighted, directed weighted, and non-weighted graph implementations.
 
 class GraphNode:
     def __init__(self, val= 0, neighbors = []):
@@ -56,11 +56,52 @@ class GraphSimple:
             for child in self.graph[node]:
                 if child not in visited:
                     q.append(child)
-        
 
-
-
-            
-
-
+from queue import Queue
+class GraphMatrix:
+    def __init__(self, vertices):
+        self.adj_matrix = []
+        for _ in range(vertices):
+            self.adj_matrix.append([0] * vertices)
     
+    def add_edge(self, u, v):
+        self.adj_matrix[u][v] = self.adj_matrix[v][u] = 1
+    
+    def get_vertex(self):
+        for v, _ in enumerate(self.adj_matrix):
+            yield v
+    
+    def get_neighbor(self, v):
+        for i, val in enumerate(self.adj_matrix):
+            if val == 1:
+                yield i
+    
+    def dfs(self):
+        parents = dict()
+
+        def helper(vertex):
+            nonlocal parents
+            for u in self.get_neighbor(vertex):
+                if u not in parents:
+                    parents[u] = vertex
+                    helper(u)
+        
+        helper(self.get_vertex())
+
+        return parents
+    
+    def bfs(self):
+        parents = dict()
+
+        q = Queue()
+        q.put(self.get_vertex())
+
+        while not q.empty():
+            v = q.get()
+
+            for neighbor in self.get_neighbor(v):
+                if neighbor not in parents:
+                    parent[neighbor] = v
+                    q.put(neighbor)
+        
+        return parents
