@@ -39,6 +39,25 @@ class GraphSimple:
                     helper(child)
 
         helper(start_node)
+    
+    def dfs_iterative(self, start_node):
+        visited = set()
+
+        stack = []
+        stack.append(start_node)
+
+        while stack:
+            node = stack.pop(-1)
+
+            ## We do this twice because of duplicate vals in stack.
+            if node not in visited:
+                print(node)
+                visited.add(node)
+
+            for child in self.graph[node]:
+                if child not in visited:
+                    stack.append(child)
+
 
     def bfs(self, start_node):
         visited = set()
@@ -90,18 +109,33 @@ class GraphMatrix:
 
         return parents
     
+    def dfs_iterative(self):
+        parents = dict()
+
+        stack = [0]
+
+        while stack:
+            node = stack.pop(-1)
+
+            for neighbor in self.get_neighbor(node):
+                if neighbor not in parents:
+                    parent[neighbor] = node
+                    stack.append(neighbor)
+        
+        return parents
+    
     def bfs(self):
         parents = dict()
 
         q = Queue()
-        q.put(self.get_vertex())
+        q.put(0)
 
         while not q.empty():
             v = q.get()
 
             for neighbor in self.get_neighbor(v):
                 if neighbor not in parents:
-                    parent[neighbor] = v
+                    parents[neighbor] = v
                     q.put(neighbor)
         
         return parents
