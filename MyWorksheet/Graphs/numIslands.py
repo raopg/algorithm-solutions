@@ -27,6 +27,7 @@
 ## DFS(row, col)
 ##      Check if row, col is valid in matrix
 ##      Check if row, col is 0. If it is, return because we are done
+##      Add (row, col) to visited
 ##      For each direction in [up, down,left, right]
 ##          DFS(row,col + direction)
 
@@ -45,6 +46,7 @@ def numIslands(matrix):
     def dfs(x, y):
         if not is_valid(x,y) or matrix[x][y] == '0':
             return
+        visited.add((x,y))
         directions = [(0,1), (1,0), (0,-1), (-1,0)]
 
         for row_delt, col_delt in directions:
