@@ -17,7 +17,7 @@ def minRotatedSortedArr(nums):
     r = len(nums) - 1 #8
 
     if nums[l] < nums[r]:
-        return 0
+        return nums[l]
 
 
     while l <= r:
