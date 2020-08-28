@@ -7,13 +7,13 @@ def find_first_last(arr, key):
     l = 0 
     r = len(arr) - 1
 
-    while l < r:
+    while l <= r:
         mid = l + (r - l) // 2
 
         if arr[mid] == key:
             found_l = found_r = mid
 
-            while found_l > 1 and arr[found_l - 1] == key:
+            while found_l > 0 and arr[found_l - 1] == key:
                 found_l -= 1
             while found_r < len(arr) - 1 and arr[found_r + 1] == key:
                 found_r += 1
