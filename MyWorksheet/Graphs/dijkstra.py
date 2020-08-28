@@ -18,16 +18,12 @@ def build_adj_list(weighted_edges):
 def dijkstra(weighted_edges, start_node):
     adj_list = build_adj_list(weighted_edges)
 
-    visited = set()
     costs = defaultdict(lambda: float('inf'))
     costs[start_node] = 0
     q = [start_node]
 
     while q:
         node = q.pop(0)
-        if node in visited:
-            continue
-        visited.add(node)
 
         for nei, cost in adj_list[node]:
             if costs[node] + cost < costs[nei]:
