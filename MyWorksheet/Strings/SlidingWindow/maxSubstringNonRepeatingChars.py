@@ -24,4 +24,5 @@ def maxSubstring(s):
 if __name__ == "__main__":
     assert maxSubstring('acbcasa') == 3
     assert maxSubstring('bbbbbbbbb') == 1
+    print(maxSubstring('aaaaaaaaab'))
         
