@@ -39,7 +39,7 @@ def generate_commands(command):
         if i == len(commands_list):
             ret.append(command_so_far)
             return
-        for idx, command in enumerate(commands_list[i]):
+        for command in commands_list[i]:
             generate_commands_recursive(command_so_far + command, i + 1)
 
     generate_commands_recursive('', 0)
